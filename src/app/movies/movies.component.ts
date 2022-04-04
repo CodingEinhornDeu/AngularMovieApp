@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
-
+import {Movies} from "../movie.datasource"
+import {Movie} from "../movie";
 @Component({
   selector: 'movies',
   templateUrl: 'movies.component.html',
@@ -8,4 +9,10 @@ import { Component } from "@angular/core";
 
 export class MoviesComponent {
 
+  movies = Movies;
+  selectedMovie: Movie;
+
+  onSelect(movie:Movie): void{
+    this.selectedMovie = movie;
+  }
 }
